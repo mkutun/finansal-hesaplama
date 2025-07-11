@@ -250,7 +250,7 @@ if calculate_button or st.session_state.calculation_successful: # Düğmeye bas�
             # Hesaplanan TL tutarını seçilen para birimine geri dönüştür
             displayed_total_required_nwc = required_nwc_amount_tl / current_effective_exchange_rate
 
-            st.metric(label=f"💰 TOTAL REQUIRED NET WORKING CAPITAL / CREDIT AMOUNT", value=f"{displayed_total_required_nwc:,.2f} {current_currency_symbol}")
+            st.metric(label=f"💰 TOTAL REQUIRED NET WORKING CAPITAL", value=f"{displayed_total_required_nwc:,.2f} {current_currency_symbol}")
             
             # İhtiyaç Duyulan Ek Sermaye (Murat'ın İsteği)
             additional_capital_needed = displayed_total_required_nwc - displayed_existing_nwc
@@ -537,7 +537,7 @@ if calculate_button or st.session_state.calculation_successful: # Düğmeye bas�
                 # document.add_heading('TOTAL REQUIRED NET WORKING CAPITAL (from Cash Conversion Cycle)', level=3)
                 # total_required_nwc_rows = [
                 #     ["Metric", f"Value ({data['currency_symbol']})"],
-                #     ["TOTAL REQUIRED NET WORKING CAPITAL / CREDIT AMOUNT", f"{data['displayed_total_required_nwc']:,.2f} {data['currency_symbol']}"]
+                #     ["TOTAL REQUIRED NET WORKING CAPITAL", f"{data['displayed_total_required_nwc']:,.2f} {data['currency_symbol']}"]
                 # ]
                 # table_total_required_nwc = document.add_table(rows=len(total_required_nwc_rows), cols=2)
                 # table_total_required_nwc.style = 'Table Grid'
