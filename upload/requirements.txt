@@ -1,9 +1,0 @@
-streamlit
-pandas
-openpyxl
-python-docx
-matplotlib
-plotly
-python-dotenv
-bcrypt
-seaborn
