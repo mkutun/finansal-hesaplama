@@ -1,4 +1,11 @@
 import streamlit as st
+
+# Kullanıcının giriş yapıp yapmadığını kontrol et
+if not st.session_state.get('logged_in', False):
+    st.warning("Bu sayfayı görüntülemek için giriş yapmanız gerekmektedir.")
+    st.switch_page("Home_Page.py") # Giriş sayfasına yönlendir
+    st.stop() # Sayfanın geri kalan kodunu çalıştırmayı durdur
+import streamlit as st
 import pandas as pd
 import math
 import json
@@ -486,7 +493,7 @@ for i in range(NUMBER_OF_SCENARIOS):
         except (ValueError, TypeError):
             default_growth = (10.0 if i % 3 == 0 else (20.0 if i % 3 == 1 else 30.0)) # Fallback if json value is invalid
         growth_vars.append(
-            st.number_input(f"Growth Rate {i+1} (%):", min_value=-50.0, max_value=100.0, value=default_growth, step=0.1, format="%.2f", key=f"growth_input_{i}")
+            st.number_input(f"Growth Rate {i+1} (%):", min_value=-50.0, max_value=100.0, value=default_growth, step=0.1, format="%.1f", key=f"growth_input_{i}")
         )
         
         try:
@@ -494,7 +501,7 @@ for i in range(NUMBER_OF_SCENARIOS):
         except (ValueError, TypeError):
             default_wacc = (3.0 if i < 3 else (7.0 if i % 3 == 1 else 12.0)) # Fallback if json value is invalid
         wacc_vars.append(
-            st.number_input(f"WACC {i+1} (%):", min_value=0.1, max_value=50.0, value=default_wacc, step=0.1, format="%.2f", key=f"wacc_input_{i}")
+            st.number_input(f"WACC {i+1} (%):", min_value=0.1, max_value=50.0, value=default_wacc, step=0.1, format="%.1f", key=f"wacc_input_{i}")
         )
         st.markdown("---")
 

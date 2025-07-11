@@ -1,4 +1,11 @@
 import streamlit as st
+
+# Kullanıcının giriş yapıp yapmadığını kontrol et
+if not st.session_state.get('logged_in', False):
+    st.warning("Bu sayfayı görüntülemek için giriş yapmanız gerekmektedir.")
+    st.switch_page("Home_Page.py") # Giriş sayfasına yönlendir
+    st.stop() # Sayfanın geri kalan kodunu çalıştırmayı durdur
+import streamlit as st
 import pandas as pd
 from io import BytesIO
 from docx import Document

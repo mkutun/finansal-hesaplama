@@ -1,5 +1,11 @@
 # dcf_streamlit_app.py - DCF & Credit Analysis Tool with Streamlit
+import streamlit as st
 
+# Kullanıcının giriş yapıp yapmadığını kontrol et
+if not st.session_state.get('logged_in', False):
+    st.warning("Bu sayfayı görüntülemek için giriş yapmanız gerekmektedir.")
+    st.switch_page("Home_Page.py") # Giriş sayfasına yönlendir
+    st.stop() # Sayfanın geri kalan kodunu çalıştırmayı durdur
 import streamlit as st
 import pandas as pd
 import json
