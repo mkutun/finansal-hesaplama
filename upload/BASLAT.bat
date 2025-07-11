@@ -1,0 +1,3 @@
+@echo off
+echo Streamlit uygulamasını başlatıyor...
+start cmd /k "streamlit run Home_Page.py && echo Uygulama tarayıcınızda açıldı. && pause"
